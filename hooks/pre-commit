@@ -8,7 +8,7 @@ set -e
 
 # Find and re-add only modified Java files to the commit
 # This ensures only staged Java files are updated in the commit
-for file in $(git diff --cached --name-only -- '*.java'); do
+for file in $(git diff --cached --name-only -- '*.java' '*.kt'); do
     git add "$file"
 done
 
